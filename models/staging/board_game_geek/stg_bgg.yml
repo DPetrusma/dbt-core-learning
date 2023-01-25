@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_games
+    description: BoardGameGeek games
+    columns:
+      - name: bgg_average_rating
+        description: '{{ doc("ratings") }}'
+      - name: dylan_rating
+        description: '{{ doc("ratings") }}'
+        tests:
+          - accepted_values:
+              values: [0,1,2,3,4,5,6,7,8,9,10]
+              quote: false
+  - name: stg_ratings
+    description: Ratings from users
+    columns:
+      - name: rating
+        description: '{{ doc("ratings") }}'
+        tests:
+          - accepted_values:
+              values: [0,1,2,3,4,5,6,7,8,9,10]
+              quote: false
+      - name: rating_datetime
+        description: All timestamps are in UTC+10
