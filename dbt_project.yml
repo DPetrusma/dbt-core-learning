@@ -34,8 +34,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   board_game_geek:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
     marts:
       +materialized: view
     staging:

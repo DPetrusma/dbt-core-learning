@@ -5,7 +5,7 @@ game_ratings as (
     select
         game_id,
         count(*) as number_of_ratings,
-        avg(rating) as avg_rating,
+        cast(avg(rating) as numeric(3,2)) as avg_rating,
         max(rating_datetime) as latest_rating_datetime
     from 
         {{ ref('stg_ratings')}}
