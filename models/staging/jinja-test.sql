@@ -1,10 +1,11 @@
+{% set player_count = ['2','3','4','5','6']-%}
+
 with payments as (
     select * from {{ ref('stg_games') }}
 ),
 pivoted as (
     select
-        min_players,
-        {%- set player_count = ['2','3','4','5','6']%}
+        min_players,        
         {%- for pc in player_count %}
             avg( case when max_players = {{ pc }} then dylan_rating else null end ) as dr{{ pc}}p{% if not loop.last%},{% endif %}
         {%- endfor -%}

@@ -20,7 +20,8 @@ select
     g.max_players,
     gr.number_of_ratings,
     gr.avg_rating,
-    gr.latest_rating_datetime
+    gr.latest_rating_datetime,
+    {{ cents_to_dollars('avg_rating',3) }}
 from
     games as g
     left join game_ratings as gr using (game_id)
