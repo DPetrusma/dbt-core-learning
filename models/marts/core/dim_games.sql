@@ -25,3 +25,4 @@ select
 from
     games as g
     left join game_ratings as gr using (game_id)
+{#{{limit_data_in_dev('latest_rating_datetime',30)}}#}

@@ -12,4 +12,4 @@
 #}
 
 {% set animals = ['lemur','lion','choobakbie'] %}
-{{ animals[0] }}
+select '{{ animals[0] }}' as a
