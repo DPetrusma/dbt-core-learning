@@ -2,7 +2,8 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    database: raw
+    database: dbtCoreMigrationDemo
+    schema: dylanp_dev
     tables:
       - name: customers
       - name: orders

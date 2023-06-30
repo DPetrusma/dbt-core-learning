@@ -28,6 +28,8 @@ var/
 .mypy_cache/
 .dmypy.json
 logs/
+dbt_modules/
+dbt_packages/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
